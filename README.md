@@ -1,9 +1,9 @@
-# cafe9
+# Cafe 9
 Demo code for jCafe about Java 9
 
 
 
-Gode YouTubes
+Good links
 
 * https://www.youtube.com/watch?v=CMMzG8I23lY - Simon Ritter (Azul) 55 new features
 
@@ -138,3 +138,21 @@ cd hello9
 mvn clean package
 java -jar target/hello9-1.0-SNAPSHOT.jar
 
+## Hello Module
+
+```
+
+mvn archetype:generate -DgroupId=dk.javagruppen -DartifactId=hellomodule -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+cd hellomodule
+
+mvn clean package
+
+java -jar target/hellomodule-1.0-SNAPSHOT.jar
+# did not work .. missing package dependencies
+
+java --module-path target/hellomodule-1.0-SNAPSHOT.jar  --module dk.javagruppen.hellomodule/dk.javagruppen.App
+
+
+
+```
