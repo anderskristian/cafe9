@@ -1,14 +1,20 @@
 # Cafe 9
 Demo code for jCafe about Java 9
 
+* This page: https://github.com/anderskristian/cafe9/blob/master/README.md
 
 
 Good links
 
 * https://www.youtube.com/watch?v=CMMzG8I23lY - Simon Ritter (Azul) 55 new features
 
+* https://blog.jetbrains.com/idea/2017/10/real-world-java-9/ - Trisja Gee IntelliJ
+
+* https://www.youtube.com/watch?v=VrI6rJNO2x4 - JDK 9 Information (Oracle)
+
 * https://blog.codefx.org/java/five-command-line-options-to-hack-the-java-9-module-system/#Accessing-Internal-APIs-With--add-exports - about exports
 
+* My problems below: https://stackoverflow.com/questions/46882786/java9-javac-add-exports-java-xml-ws-javax-xml-ws-all-unnamed-warning-option
 
 
 ## Getting started
