@@ -6,6 +6,8 @@ Demo code for jCafe about Java 9
 
 Good links
 
+* https://docs.oracle.com/javase/9/index.html - Oracle JDK 9 Documentation (Contains migration guide)
+
 * https://www.youtube.com/watch?v=CMMzG8I23lY - Simon Ritter (Azul) 55 new features
 
 * https://blog.jetbrains.com/idea/2017/10/real-world-java-9/ - Trisja Gee IntelliJ
@@ -18,11 +20,14 @@ Good links
 
 
 ## Getting started
+
+
 ```
+subl ~/.bash_profile
 
 export | grep JAVA
 declare -x JAVA8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
-declare -x JAVA9_HOME="/Library/Java/JavaVirtualMachines/jdk-9.jdk/Contents/Home"
+declare -x JAVA9_HOME="/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home"
 declare -x JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
 
 mkdir cafe9
@@ -174,4 +179,10 @@ java --module-path target/hellomodule-1.0-SNAPSHOT.jar  --module dk.javagruppen.
 * Remove all warings in 8'er code. 
 * Find replacements for troublesome inner JDK methods
 
+# Jshell
 
+```
+
+alias jshell='JAVA_HOME=$JAVA9_HOME; $JAVA_HOME/bin/jshell'
+
+```
