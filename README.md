@@ -98,9 +98,9 @@ java -cp target/java8-1.0-SNAPSHOT.jar dk.javagruppen.App
 
 
 #### Most code can be compiled by JAVA9 (in 8 mode) .. except
-maven-compiler-plugin x.x.x - upgrade 3.7.0
-aspectj-maven-plugin expects tools.jar (upgrade to version 1.11 (not released yet))
-maven-assembly-plugin 2.5.2 - upgrade 3.1.0
+* maven-compiler-plugin x.x.x - upgrade 3.7.0
+* aspectj-maven-plugin expects tools.jar (upgrade to version 1.11 (not released yet))
+* maven-assembly-plugin 2.5.2 - upgrade 3.1.0
 
 
 ##### non modulized
@@ -156,3 +156,16 @@ java --module-path target/hellomodule-1.0-SNAPSHOT.jar  --module dk.javagruppen.
 
 
 ```
+
+# Summary
+
+* Java 9 can compile all (<=8)
+* Java 9 can run - most (<=8)) - i.e. Maven it self.
+* Converting existing 8's to 9'er can give some troubles
+* AOP ... ( aspectj-maven-plugin )
+
+## Prepare (from now on)
+* Remove all warings in 8'er code. 
+* Find replacements for troublesome inner JDK methods
+
+
