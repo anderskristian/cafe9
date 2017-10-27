@@ -7,15 +7,28 @@ find src/main -name "*.java" > target/sources.txt
 
 
 
+#
+# Function:		Will compile artifact as we used to do (8'er)
+#				It does not work in Java 9 because modules
+#				are protected
+# ----------------------------------------------------------------------------
 compile() {
 	javac -sourcepath src/main/java @target/sources.txt -d target/classes
 }
 
+#
+# Function:		Will compile artifact and tell 9'er to
+#				export package sun.awt in module java.desktop
+# 				to all unnamed modules.
+# Problem:		Module java.xml.ws is not found ?
+# ----------------------------------------------------------------------------
 compile_export(){
 
 # --add-exports $module/$package=$readingmodule
 
 	javac \
+	 --add-exports java.xml/org.w3c.dom=ALL-UNNAMED \
+	 --add-exports java.xml.ws/javax.jws=ALL-UNNAMED \
 	 --add-exports java.desktop/sun.awt=ALL-UNNAMED \
 	 --add-exports java.management/sun.management=ALL-UNNAMED \
 	 -sourcepath src/main/java @target/sources.txt -d target/classes
@@ -26,11 +39,13 @@ compile_export(){
 #compile
 compile_export
 
-
+# ----------------------------------------------------------------------------
+# below is a list of modules that cannot be exported ...
 
 # these modules got problems
 # ?? Why ?? mostly @Deprecated(since="9"....)
-# used from module-info.java the one I tried works
+#
+# used from module-info.java it works ..
 #
 # module name in --add-exports option not found: java.xml.ws               		@Deprecated
 # module name in --add-exports option not found: java.activation                @Deprecated
