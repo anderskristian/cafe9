@@ -11,5 +11,10 @@ pipeline {
         sh 'pwd'
       }
     }
+    stage('maven') {
+      steps {
+        mail(subject: 'Mail fra Jenkins', body: 'Der bygges', to: 'aka@myself.com')
+      }
+    }
   }
 }
