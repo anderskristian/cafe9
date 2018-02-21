@@ -6,7 +6,7 @@ pipeline {
         echo 'Hej med dig'
       }
     }
-    stage('Mere greeting') {
+    stage('Where are we') {
       steps {
         sh 'pwd'
       }
