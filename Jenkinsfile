@@ -13,7 +13,7 @@ pipeline {
     }
     stage('maven') {
       steps {
-        mail(subject: 'Mail fra Jenkins', body: 'Der bygges', to: 'aka@myself.com')
+        sh 'mvn --version'
       }
     }
   }
