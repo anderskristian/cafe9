@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('build') {
       steps {
-        build(job: 'maven-build', quietPeriod: 1)
+        echo 'Hej med dig'
       }
     }
   }
