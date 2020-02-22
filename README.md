@@ -1,5 +1,6 @@
 # Cafe 9
-Demo code for jCafe about Java 9
+Demo code for jCafe about Java 9 
+TEST
 
 * This page: https://github.com/anderskristian/cafe9/blob/master/README.md
 
